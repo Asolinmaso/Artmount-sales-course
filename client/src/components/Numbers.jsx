@@ -1,15 +1,14 @@
 import React from 'react';
 import { useScrollReveal, useCountUp } from '../hooks/useScrollReveal';
 
-// Individual stat card with its own counter
 function StatCard({ stat, index, sectionVisible }) {
   const numericEnd = parseInt(stat.number.replace(/[^0-9]/g, ''), 10) || 0;
-  const suffix = stat.number.replace(/[0-9,]/g, ''); // e.g. '+', '%'
+  const suffix = stat.number.replace(/[0-9,]/g, '');
   const count = useCountUp(numericEnd, 1800, sectionVisible);
 
   return (
     <div
-      className="stat-card reveal-item"
+      className="stat-card"
       style={{
         transitionDelay: `${index * 120}ms`,
         opacity: sectionVisible ? 1 : 0,

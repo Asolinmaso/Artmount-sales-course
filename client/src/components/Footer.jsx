@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import logoImg from '../assets/logo.png';
+import footerBg from '../assets/Frame2.png';
+import instagramIcon from '../icons/Frame 291.png';
+import facebookIcon from '../icons/Frame 292.png';
+import linkedinIcon from '../icons/Frame 294.png';
+import youtubeIcon from '../icons/Frame 295.png';
+import dropdownIcon from '../icons/Vector.png';
 
 export default function Footer() {
   const [formData, setFormData] = useState({
     name: '',
-    countryCode: '+91',
     phone: '',
     email: '',
     location: '',
@@ -37,12 +42,10 @@ export default function Footer() {
     e.preventDefault();
     setStatus({ loading: true, success: false, error: null });
 
-    const contactStr = `${formData.countryCode} ${formData.phone}`.trim();
     const payload = {
       name: formData.name,
-      contact: contactStr,
+      contact: formData.phone,
       email: formData.email,
-      location: formData.location,
       message: formData.message
     };
 
@@ -64,7 +67,6 @@ export default function Footer() {
       setStatus({ loading: false, success: true, error: null });
       setFormData({
         name: '',
-        countryCode: '+91',
         phone: '',
         email: '',
         location: '',
@@ -99,20 +101,21 @@ export default function Footer() {
           </p>
 
           <div className="contact-details">
-            <div className="contact-detail-item">
+            <h1 className="contact-label">Contact Us</h1>
+            <div className="contact-detail-item contact-email-item">
               <span className="contact-icon">
-                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 1H3C1.9 1 1 1.9 1 3V13C1 14.1 1.9 15 3 15H17C18.1 15 19 14.1 19 13V3C19 1.9 18.1 1 17 1Z" stroke="#E5C583" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M19 3L10 9L1 3" stroke="#E5C583" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <svg width="24" height="20" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 1H3C1.9 1 1 1.9 1 3V13C1 14.1 1.9 15 3 15H17C18.1 15 19 14.1 19 13V3C19 1.9 18.1 1 17 1Z" stroke="#C89B3C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M19 3L10 9L1 3" stroke="#C89B3C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
               <a href="mailto:Contact@artmountacademy.com" className="contact-link">Contact@artmountacademy.com</a>
             </div>
 
-            <div className="contact-detail-item">
+            <div className="contact-detail-item contact-phone-item">
               <span className="contact-icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19 14.5V17.5C19.001 18.03 18.777 18.536 18.384 18.893C17.99 19.25 17.464 19.421 16.94 19.36C13.843 19.023 10.871 17.967 8.27 16.27C5.813 14.697 3.733 12.617 2.16 10.16C0.457 7.548 0.404 4.562 0.07 1.45C0.009 0.927 0.179 0.402 0.536 0.009C0.893-0.384 1.4-0.608 1.93-0.607H4.93C5.922-0.607 6.753 0.125 6.879 1.11C6.993 1.996 7.21 2.868 7.52 3.71C7.799 4.469 7.616 5.316 7.039 5.89L5.769 7.16C7.234 9.737 9.373 11.876 11.95 13.34L13.22 12.07C13.794 11.493 14.641 11.31 15.4 11.59C16.242 11.9 17.114 12.117 18 12.231C18.995 12.359 19.726 13.2 19.726 14.192V14.5H19Z" fill="#E5C583" />
+                <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 14.5V17.5C19.001 18.03 18.777 18.536 18.384 18.893C17.99 19.25 17.464 19.421 16.94 19.36C13.843 19.023 10.871 17.967 8.27 16.27C5.813 14.697 3.733 12.617 2.16 10.16C0.457 7.548 0.404 4.562 0.07 1.45C0.009 0.927 0.179 0.402 0.536 0.009C0.893-0.384 1.4-0.608 1.93-0.607H4.93C5.922-0.607 6.753 0.125 6.879 1.11C6.993 1.996 7.21 2.868 7.52 3.71C7.799 4.469 7.616 5.316 7.039 5.89L5.769 7.16C7.234 9.737 9.373 11.876 11.95 13.34L13.22 12.07C13.794 11.493 14.641 11.31 15.4 11.59C16.242 11.9 17.114 12.117 18 12.231C18.995 12.359 19.726 13.2 19.726 14.192V14.5H19Z" fill="#C89B3C" />
                 </svg>
               </span>
               <a href="tel:+918778359643" className="contact-link">+91 8778359643</a>
@@ -157,29 +160,27 @@ export default function Footer() {
               </div>
 
               <div className="form-group phone-group">
-                <select
-                  name="countryCode"
-                  value={formData.countryCode}
-                  onChange={handleChange}
-                  disabled={status.loading}
-                  className="country-select"
-                >
-                  <option value="+91">+91 (IN)</option>
-                  <option value="+1">+1 (US)</option>
-                  <option value="+44">+44 (UK)</option>
-                  <option value="+971">+971 (AE)</option>
-                  <option value="+65">+65 (SG)</option>
-                </select>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="Contact Number"
-                  required
-                  disabled={status.loading}
-                  className="phone-input"
-                />
+                <div className="phone-input-wrapper">
+                  <div className="phone-code-wrapper">
+                    <select
+                      name="phoneCode"
+                      className="phone-code-select"
+                      disabled={status.loading}
+                    >
+                      <option value="+91">+91</option>
+                    </select>
+                    <img src={dropdownIcon} alt="" className="phone-code-arrow" />
+                  </div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Contact"
+                    required
+                    disabled={status.loading}
+                  />
+                </div>
               </div>
 
               <div className="form-group">
@@ -211,7 +212,7 @@ export default function Footer() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Message (Optional)"
+                  placeholder="Message"
                   rows="4"
                   disabled={status.loading}
                 ></textarea>
@@ -225,7 +226,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-bottom-nav section-padding" ref={bottomRef}>
+      <div className="footer-bottom-nav section-padding" ref={bottomRef} style={{ backgroundImage: `url(${footerBg})` }}>
         <div
           className="container bottom-nav-container"
           style={{
@@ -236,7 +237,7 @@ export default function Footer() {
         >
           <div className="company-info-block">
             <div className="logo logo-footer" onClick={() => handleLinkClick('home')} role="button" tabIndex={0}>
-              <img src={logoImg} alt="Artmount Academy" className="logo-img" style={{ height: '38px' }} />
+              <img src={logoImg} alt="Artmount Academy" className="logo-img" style={{ height: '55px' }} />
             </div>
             <p className="footer-tagline">
               India's most practical sales career program. Building the next generation of high-income sales professionals.
@@ -256,8 +257,8 @@ export default function Footer() {
           <div className="links-block">
             <h4 className="links-title">Support</h4>
             <ul className="links-list">
-              <li><button onClick={() => handleLinkClick('faq')} className="footer-btn-link">FAQ</button></li>
-              <li><button onClick={() => handleLinkClick('contact')} className="footer-btn-link">Contact</button></li>
+              <li><button onClick={() => handleLinkClick('contact')} className="footer-btn-link">FAQ</button></li>
+              <li><a href="#" className="footer-link">Contact</a></li>
               <li><a href="#" className="footer-link">Privacy Policy</a></li>
             </ul>
           </div>
@@ -265,33 +266,17 @@ export default function Footer() {
           <div className="social-block">
             <h4 className="links-title">Follow Us</h4>
             <div className="social-icons">
-              {/* Instagram */}
               <a href="#" aria-label="Instagram" className="social-icon-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
+                <img src={instagramIcon} alt="Instagram" />
               </a>
-              {/* Facebook */}
               <a href="#" aria-label="Facebook" className="social-icon-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                </svg>
+                <img src={facebookIcon} alt="Facebook" />
               </a>
-              {/* LinkedIn */}
               <a href="#" aria-label="LinkedIn" className="social-icon-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-                </svg>
+                <img src={linkedinIcon} alt="LinkedIn" />
               </a>
-              {/* WhatsApp */}
-              <a href="#" aria-label="WhatsApp" className="social-icon-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
+              <a href="#" aria-label="YouTube" className="social-icon-btn">
+                <img src={youtubeIcon} alt="YouTube" />
               </a>
             </div>
           </div>
@@ -299,7 +284,7 @@ export default function Footer() {
       </div>
 
       <div className="copyright-bar">
-        <p>© 2026 Growthpreneur. All rights reserved. | Designed & Developed By Manvian</p>
+        <p>&copy; 2026 Growthpreneur. All rights reserved. | Designed &amp; Developed By Manvian</p>
       </div>
     </footer>
   );

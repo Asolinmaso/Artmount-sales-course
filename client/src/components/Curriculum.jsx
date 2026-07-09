@@ -3,6 +3,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function Curriculum() {
   const [activeTab, setActiveTab] = useState(0);
+  const [openPill, setOpenPill] = useState(null);
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   const modules = [
@@ -11,51 +12,55 @@ export default function Curriculum() {
       title: 'Sales Foundations',
       description: 'Learn the core concepts that every successful sales professional needs.',
       pills: [
-        'Sales psychology & buyer behavior',
-        'Value proposition design',
-        'Prospecting methods',
-        'CRM & sales tools',
+        { title: 'Sales psychology & buyer behavior' },
+        { title: 'Value proposition design' },
+        { title: 'Prospecting methods' },
+        { title: 'CRM & sales tools' }
       ],
     },
     {
       num: 'Module 02',
-      title: 'Outreach & Lead Gen',
-      description: 'Master the art of reaching out to prospects, generating interest, and booking high-value meetings.',
+      title: 'Sales Mindset',
+      description: 'Develop the mental frameworks and resilience required to excel in high-stakes sales environments.',
       pills: [
-        'Cold email marketing',
-        'LinkedIn outreach & networking',
-        'Cold calling techniques',
-        'Lead generation software',
+        { title: 'Growth mindset for sales' },
+        { title: 'Emotional intelligence' },
+        { title: 'Resilience & grit' },
+        { title: 'Goal setting & visualization' },
       ],
     },
     {
       num: 'Module 03',
-      title: 'The Art of Closing',
-      description: 'Learn how to run productive discovery calls, handle objections, and close deals with high conversion rates.',
+      title: 'Pitching & Outreach',
+      description: 'Master the art of reaching out to prospects and delivering compelling pitches that convert.',
       pills: [
-        'Objection handling frameworks',
-        'Discovery call checklist',
-        'Negotiation strategies',
-        'Closing questions & contracts',
+        { title: 'Cold email mastery' },
+        { title: 'LinkedIn outreach' },
+        { title: 'Cold calling techniques' },
+        { title: 'Presentation skills' },
       ],
     },
     {
       num: 'Module 04',
-      title: 'Sales Career Growth',
-      description: 'Optimize your sales presence, prepare for top-tier interviews, and learn how to manage and scale high-ticket accounts.',
+      title: 'Closing & Negotiation',
+      description: 'Learn proven closing methodologies and negotiation strategies to win deals consistently.',
       pills: [
-        'Resume & LinkedIn optimization',
-        'Mock interview preparations',
-        'High-ticket account management',
-        'Freelancing & sales consulting',
+        { title: 'Objection handling' },
+        { title: 'Discovery calls' },
+        { title: 'Negotiation strategies' },
+        { title: 'Closing techniques' }
       ],
     },
   ];
 
-  const tabs = ['01 — Mindset', '02 — Outreach', '03 — Closing', '04 — Growth'];
+  const tabs = ['01 - Mindset', '02 - Outreach', '03 - Closing', '04 - Growth'];
+
+  const togglePill = (index) => {
+    setOpenPill(openPill === index ? null : index);
+  };
 
   return (
-    <section id="course" className="curriculum-section section-padding" ref={ref}>
+    <section id="course" className="curriculum-section section-padding" ref={ref} style={{ paddingBottom: '20px' }}>
       <div className="container">
         <p
           className="section-subtitle"
@@ -78,7 +83,6 @@ export default function Curriculum() {
           Curriculum Overview
         </h2>
 
-        {/* Tabs */}
         <div
           className="tabs-container"
           style={{
@@ -90,7 +94,7 @@ export default function Curriculum() {
           {tabs.map((tab, index) => (
             <button
               key={index}
-              onClick={() => setActiveTab(index)}
+              onClick={() => { setActiveTab(index); setOpenPill(null); }}
               className={`tab-btn ${activeTab === index ? 'active' : ''}`}
             >
               {tab}
@@ -98,13 +102,15 @@ export default function Curriculum() {
           ))}
         </div>
 
-        {/* Content box */}
         <div
           className="tab-content-box"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
             transition: 'opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s',
+            maxWidth: '1500px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}
         >
           <div className="module-info">
@@ -114,17 +120,23 @@ export default function Curriculum() {
           </div>
           <div className="module-pills">
             {modules[activeTab].pills.map((pill, index) => (
-              <div
-                key={index}
-                className="pill-item"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateX(0)' : 'translateX(20px)',
-                  transition: `opacity 0.4s ease ${0.4 + index * 0.08}s, transform 0.4s ease ${0.4 + index * 0.08}s`,
-                }}
-              >
-                <span className="pill-dot"></span>
-                <span>{pill}</span>
+              <div key={index} className="pill-item-wrapper">
+                <button
+                  className={`pill-item ${openPill === index ? 'open' : ''}`}
+                  onClick={() => togglePill(index)}
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateX(0)' : 'translateX(20px)',
+                    transition: `opacity 0.4s ease ${0.4 + index * 0.08}s, transform 0.4s ease ${0.4 + index * 0.08}s`,
+                  }}
+                >
+                  <span className="pill-dot"></span>
+                  <span className="pill-text">{pill.title}</span>
+
+                </button>
+                <div className={`pill-detail ${openPill === index ? 'open' : ''}`}>
+                  <p>{pill.detail}</p>
+                </div>
               </div>
             ))}
           </div>
