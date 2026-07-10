@@ -1,5 +1,6 @@
 import React from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import bgFrame from '../assets/Frame1.png';
 
 export default function CTA() {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
@@ -11,10 +12,10 @@ export default function CTA() {
     }
   };
 
-  const benefits = ['EMI available', 'No prior experience needed', '6-month placement support'];
+  const benefits = ['EMI Available', 'No Prior experience needed', '6-month placement support'];
 
   return (
-    <section className="cta-section section-padding" ref={ref}>
+    <section className="cta-section section-padding" ref={ref} style={{ backgroundImage: `url(${bgFrame})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="container cta-container">
         <div
           className="badge-gold cta-badge"
@@ -22,6 +23,7 @@ export default function CTA() {
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
             transition: 'opacity 0.5s ease, transform 0.5s ease',
+
           }}
         >
           Next cohort starting soon
@@ -33,6 +35,7 @@ export default function CTA() {
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s',
+
           }}
         >
           Ready to Build a <span className="text-gold">High-Income Career?</span>
@@ -44,9 +47,10 @@ export default function CTA() {
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
             transition: 'opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s',
+
           }}
         >
-          Join 2,500+ professionals who invested in their sales career and transformed their income. 
+          Join 2,500+ professionals who invested in their sales career and transformed their income.
           Applications close when the cohort is full.
         </p>
 
@@ -57,6 +61,7 @@ export default function CTA() {
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'scale(1)' : 'scale(0.9)',
             transition: 'opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s',
+
           }}
         >
           Apply Now

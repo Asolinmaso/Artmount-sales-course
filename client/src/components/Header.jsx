@@ -68,6 +68,12 @@ export default function Header() {
           </button>
         </nav>
       </div>
+
+      <div
+        className={`mobile-overlay ${mobileMenuOpen ? 'open' : ''}`}
+        onClick={toggleMobileMenu}
+        aria-hidden="true"
+      />
     </header>
   );
 }

@@ -30,18 +30,15 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-title">
-            Become the Person<br />
-            Who <span className="text-gold">Drives Revenue.</span>
+            Become the Person Who<br /> <span className="text-gold">Drives Revenue.</span>
           </h1>
 
           <p className="hero-subtitle">
-            Become a <span className="highlight-gold">High-Income</span> Sales Professional
+            Become a <span className="text-gold">High-Income</span>  Sales Professional
           </p>
 
           <p className="hero-description">
-            Master sales, business development, and lead generation with
-            hands-on training, real projects, and direct mentorship from
-            India's top sales leaders.
+            Master sales, business development, and lead <br /> generation with hands-on training, real projects, and <br /> direct mentorship from India's top sales leaders.
           </p>
 
           <button
