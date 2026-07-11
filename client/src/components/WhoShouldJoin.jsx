@@ -52,7 +52,7 @@ export default function WhoShouldJoin() {
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.5s ease, transform 0.5s ease',
-            fontSize: '24px',
+
           }}
         >
           Who Should Join
@@ -63,10 +63,12 @@ export default function WhoShouldJoin() {
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
             transition: 'opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s',
-            fontSize: '42px',
+
           }}
         >
-          Built for Ambitious Professionals
+          Built for Ambitious
+          <span className="mobile-break"><br /></span>{" "}
+          Professionals
         </h2>
 
         <div className="join-grid">
