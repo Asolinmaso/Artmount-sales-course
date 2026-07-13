@@ -39,9 +39,12 @@ export default function About() {
           }}
         >
           <p className="section-subtitle" style={{ textAlign: 'left' }}>About Us</p>
-          <h2 className="about-title">Your Growth. Our Mission.</h2>
+          <h2 className="about-title">Your Growth. Our
+            <span className="mobile-break"> <br /> </span>
+            &nbsp;Mission.
+          </h2>
           <p className="about-description">
-            Growthpreneur is built for ambitious professionals who want to break into high-income sales careers. 
+            Growthpreneur is built for ambitious professionals who want to break into high-income sales careers.
             We combine structured learning with real-world practice and direct industry exposure.
           </p>
 
@@ -58,7 +61,7 @@ export default function About() {
               >
                 <span className="check-icon">
                   <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 5L5 9L13 1" stroke="#2B200B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M1 5L5 9L13 1" stroke="#2B200B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
                 <span className="about-item-text">{point}</span>

@@ -10,7 +10,13 @@ export default function Curriculum() {
     {
       num: 'Module 01',
       title: 'Sales Foundations',
-      description: 'Learn the core concepts that every successful sales professional needs.',
+      description: (
+        <>
+          Learn the core concepts that every
+          <span className="mobile-break"><br /></span>{" "}
+          successful sales professional needs.
+        </>
+      ),
       pills: [
         { title: 'Sales psychology & buyer behavior' },
         { title: 'Value proposition design' },

@@ -15,7 +15,7 @@ export default function CTA() {
   const benefits = ['EMI Available', 'No Prior experience needed', '6-month placement support'];
 
   return (
-    <section className="cta-section section-padding" ref={ref} style={{ backgroundImage: `url(${bgFrame})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section className="cta-section section-padding" ref={ref} style={{ backgroundImage: `radial-gradient(circle at center, rgba(255, 215, 0, 0.08) 0%, transparent 70%), url(${bgFrame})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="container cta-container">
         <div
           className="badge-gold cta-badge"
