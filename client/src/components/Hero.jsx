@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import heroLion from '../assets/hero-lion.png';
 import heroBg from '../assets/hero-bg.jpg';
+import heroMobile from '../assets/image 1.png';
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -34,8 +35,8 @@ export default function Hero() {
           </h1>
 
           <p className="hero-subtitle">
-            Become a <span className="text-gold">High-Income</span>  Sales
-            <span className="mobile-break"> <br /></span>
+            Become a <span className="text-gold">High-Income</span>  Sales {" "}
+            <span className="mobile-break"> <br /> </span>
             Professional
           </p>
 
@@ -51,9 +52,9 @@ export default function Hero() {
             <span className="mobile-only">
               Master sales, business development, and lead
               <br />
-              generation with hands-on training, real&nbsp;
+              generation with hands-on training, real
               <br />
-              projects, and direct mentorship from India's top&nbsp;
+              projects, and direct mentorship from India's top
               <br />
               sales leaders.
             </span>
@@ -71,11 +72,17 @@ export default function Hero() {
         {/* RIGHT — lion image slides in */}
         <div className={`hero-visual hero-slide-right ${mounted ? 'hero-reveal' : ''}`}>
           <div className="hero-image-wrapper">
-            {/* 5th attached image — lion in suit */}
+            {/* Desktop: lion image */}
             <img
               src={heroLion}
               alt="Sales Leadership"
               className="hero-image"
+            />
+            {/* Mobile: alternate image */}
+            <img
+              src={heroMobile}
+              alt="Sales Leadership"
+              className="hero-image-mobile"
             />
           </div>
         </div>

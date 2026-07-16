@@ -114,7 +114,7 @@ export default function Footer() {
 
               <div className="contact-detail-item contact-phone-item">
                 <span className="contact-icon">
-                  <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="25" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 14.5V17.5C19.001 18.03 18.777 18.536 18.384 18.893C17.99 19.25 17.464 19.421 16.94 19.36C13.843 19.023 10.871 17.967 8.27 16.27C5.813 14.697 3.733 12.617 2.16 10.16C0.457 7.548 0.404 4.562 0.07 1.45C0.009 0.927 0.179 0.402 0.536 0.009C0.893-0.384 1.4-0.608 1.93-0.607H4.93C5.922-0.607 6.753 0.125 6.879 1.11C6.993 1.996 7.21 2.868 7.52 3.71C7.799 4.469 7.616 5.316 7.039 5.89L5.769 7.16C7.234 9.737 9.373 11.876 11.95 13.34L13.22 12.07C13.794 11.493 14.641 11.31 15.4 11.59C16.242 11.9 17.114 12.117 18 12.231C18.995 12.359 19.726 13.2 19.726 14.192V14.5H19Z" fill="#C89B3C" />
                   </svg>
                 </span>
@@ -226,7 +226,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="footer-bottom-nav section-padding" ref={bottomRef} style={{ backgroundImage: `radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, transparent 70%), url(${footerBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="footer-bottom-nav section-padding" ref={bottomRef} style={{ backgroundImage: `radial-gradient(circle at center, rgba(255, 215, 0, 0.13) 0%, transparent 70%), url(${footerBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div
             className="container bottom-nav-container"
             style={{
