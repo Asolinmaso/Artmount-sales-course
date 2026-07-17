@@ -434,6 +434,8 @@
     border-radius: 20px;
     white-space: normal;
     font-size: 12.5px !important;
+    border: 2px solid #C89B3C !important;
+    box-shadow: 0 0 12px rgba(200, 155, 60, 0.4) !important;
   }
 
   /* Heading */
@@ -468,10 +470,11 @@
 
   /* Button */
   .hero-cta {
-    width: 160px;
-    height: 52px;
+    width: 130px;
+    height: 42px;
     margin: 0 auto;
-    font-size: 18px;
+    font-size: 15px;
+    padding: 8px 16px;
   }
 
   .hero-visual {
@@ -513,10 +516,11 @@
   }
 
   .hero-badge {
-    padding: 10px 16px;
-    border-radius: 20px;
-    white-space: normal;
-    font-size: 13px !important;
+    max-width: 100%;
+    height: auto;
+    min-height: 40px;
+    font-size: 14px;
+    padding: 8px 16px;
   }
 
   .hero-title {
@@ -535,9 +539,10 @@
   }
 
   .hero-cta {
-    width: 135px;
-    height: 48px;
-    font-size: 16px;
+    width: 120px;
+    height: 38px;
+    font-size: 14px;
+    padding: 6px 12px;
   }
 
   .hero-image-mobile {
@@ -624,6 +629,9 @@
     min-height: 142px !important;
     padding: 16px !important;
     border-radius: 24px !important;
+    text-align: center !important;
+    border: 2px solid #C89B3C !important;
+    box-shadow: 0 0 12px rgba(200, 155, 60, 0.3) !important;
   }
 
   .stat-number {
@@ -984,6 +992,35 @@
   flex: 1;
 }
 
+.pill-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  padding: 0 32px;
+  color: var(--text-white);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.pill-detail.open {
+  max-height: 200px;
+  padding: 16px 32px;
+}
+
+@media (max-width: 768px) {
+  .pill-detail {
+    font-size: 15px;
+  }
+
+  .pill-detail.open {
+    padding: 12px 16px;
+  }
+}
+
 .mobile-break {
   display: none;
 }
@@ -1000,9 +1037,13 @@
 }
 
 @media (max-width: 768px) {
+  .curriculum-section .section-title {
+    margin-bottom: 12px;
+  }
+
   .tabs-container {
     gap: 8px;
-    padding: 16px 0;
+    padding: 12px 0;
     overflow-x: auto;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -1219,6 +1260,8 @@
 
   .join-card {
     padding: 16px;
+    border: 2px solid #C89B3C !important;
+    box-shadow: 0 0 12px rgba(200, 155, 60, 0.3) !important;
   }
 
   .section-subtitle {
@@ -1286,7 +1329,6 @@
 .cta-section {
   background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   border-top: var(--border-subtle);
-  border-bottom: var(--border-subtle);
   text-align: center;
 }
 
@@ -1406,12 +1448,12 @@
   }
 
   .cta-btn {
-    width: 100%;
-    max-width: 135px !important;
-    height: 48px !important;
-    font-size: 16px !important;
+    width: auto;
+    max-width: 110px !important;
+    height: 38px !important;
+    font-size: 14px !important;
     border-radius: 8px !important;
-    padding: 12px 24px;
+    padding: 6px 16px;
   }
 
   .cta-badge {
@@ -1565,8 +1607,13 @@
   }
 
   .faq-icon-box {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
+  }
+  
+  .faq-icon-box svg {
+    width: 12px !important;
+    height: 12px !important;
   }
 
   .faq-answer {
@@ -2106,21 +2153,21 @@
   }
 
   .footer-tagline {
-    font-size: 16px !important;
-    line-height: 1.7;
-    max-width: 320px;
-    margin-top: 12px;
+    font-size: 18px !important;
+    line-height: 1.8;
+    max-width: 360px;
+    margin-top: 16px;
   }
 
   .links-title {
-    font-size: 18px;
-    margin-bottom: 12px;
+    font-size: 22px;
+    margin-bottom: 16px;
   }
 
   .links-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
   }
 
   .footer-btn-link,
@@ -2130,49 +2177,52 @@
 
   .social-icons {
     display: flex;
-    gap: 12px;
-    margin-top: 10px;
+    gap: 16px;
+    margin-top: 14px;
   }
 
   .social-icon-btn {
-    width: 50px !important;
-    height: 50px !important;
+    width: 56px !important;
+    height: 56px !important;
     border-radius: 50px !important;
     border-color: gold;
   }
 
   .social-icon-btn img {
-    width: 50px !important;
-    height: 50px !important;
+    width: 56px !important;
+    height: 56px !important;
 
   }
 
   .contact-title {
-    font-size: 28px;
+    font-size: 32px;
     padding-left: 25px;
   }
 
   .contact-description {
-    font-size: 16px !important;
+    font-size: 18px !important;
     margin-bottom: 32px;
     line-height: 1.5;
     padding-left: 25px;
   }
 
   .contact-label {
-    font-size: 22px;
+    font-size: 26px;
     padding-left: 25px;
   }
 
   .contact-link {
     font-size: 18px;
-    padding-left: 5px;
+  }
+
+  .contact-detail-item {
+    gap: 6px !important;
   }
 
   .contact-icon {
-    width: 32px;
-    height: 36px;
-    margin-left: 20px;
+    width: 28px;
+    height: 32px;
+    margin-left: 10px;
   }
 
   .contact-icon svg {
@@ -2314,27 +2364,31 @@
   }
 
   .footer-tagline {
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.7;
   }
 
   .links-title {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .footer-btn-link,
   .footer-link {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .social-icon-btn {
-    width: 38px;
-    height: 38px;
+    width: 48px;
+    height: 48px;
   }
 
   .social-icon-btn img {
-    width: 18px;
-    height: 18px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .bottom-nav-container {
+    gap: 32px;
   }
 
   .brand-letter {
